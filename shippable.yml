@@ -5,11 +5,13 @@ language: ruby
 ruby:
   - 2.1.2
 
+git_sync:
+ - rvm use 2.1.2 --install
+
 service:
  - redis-server
  
 before_install:
- - rvm use 2.1.2 --install
  - bundle install
  - bundle exec rake db:create
  - bundle exec rake db:migrate
